@@ -90,6 +90,39 @@ select d.department_name,count(e.employee_id) as employee_count from departments
 select d.department_name,avg(e.salary) as average_salary from departments d left join employees e on d.department_id=e.department_id group by d.department_name;
 select d.department_name,count(e.employee_id) as employee_count from departments d join employees e on d.department_id=e.department_id group by d.department_name having count(e.employee_id)>2;
 select d.department_name,max(e.salary) as highest_salary from departments d left join employees e on d.department_id=e.department_id group by d.department_name;
+
+CREATE TABLE customers_new
+(
+ customer_id INT PRIMARY KEY,
+ customer_name VARCHAR(50),
+ city VARCHAR(50),
+ membership_type VARCHAR(30)
+);
+CREATE TABLE payments
+(
+ payment_id INT PRIMARY KEY,
+ customer_id INT,
+ amount DECIMAL(10,2),
+ payment_mode VARCHAR(30),
+ payment_status VARCHAR(30)
+);
+INSERT INTO customers_new VALUES
+(1, 'Ramesh Gupta', 'Hyderabad', 'Gold'),
+(2, 'Sana Khan', 'Bangalore', 'Silver'),
+(3, 'John Mathew', 'Mumbai', 'Gold'),
+(4, 'Ayesha Begum', 'Chennai', 'Bronze'),
+(5, 'Vikram Rao', 'Delhi', 'Silver'),
+(6, 'Divya Sharma', 'Pune', NULL);
+INSERT INTO payments VALUES
+(1001, 1, 15000, 'UPI', 'Success'),
+(1002, 1, 8000, 'Card', 'Success'),
+(1003, 2, 5000, 'Cash', 'Pending'),
+(1004, 3, 22000, 'UPI', 'Success'),
+(1005, 7, 12000, 'Card', 'Failed'),
+(1006, NULL, 3000, 'Cash', 'Pending'),
+(1007, 4, NULL, 'UPI', 'Success'),
+(1008, 5, 7000, NULL, 'Success');
+
 select * from customers_new where customer_id in(select customer_id from payments where customer_id is not null);
 select * from customers_new c where not exists(select 1 from payments p where p.customer_id=c.customer_id);
 select * from payments where amount>(select avg(amount) from payments);
