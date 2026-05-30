@@ -115,7 +115,6 @@ db.restaurants.insertMany([
  }
 ])
 
-
 db.restaurants.find()
 
 db.restaurants.find({},{_id:0,name:1,city:1,cuisine:1})
@@ -174,3 +173,34 @@ db.restaurants.find().sort({avg_order_value:-1}).limit(2)
 
 db.restaurants.updateOne({name:"Burger Street"},{$set:{rating:4.0}})
 
+db.restaurants.updateOne({name:"Tea Tales"},{$set:{delivery_available:true}})
+
+db.restaurants.updateMany({},{$set:{active:true}})
+
+db.restaurants.updateOne({name:"Spice Hub"},{$push:{tags:"popular"}})
+
+db.restaurants.updateMany({},{$unset:{active:""}})
+
+db.restaurants.deleteOne({restaurant_id:6})
+
+db.restaurants.deleteMany({rating:{$lt:4.0}})
+
+db.restaurants.countDocuments()
+
+db.restaurants.countDocuments({delivery_available:true})
+
+db.restaurants.distinct("city")
+
+db.restaurants.distinct("cuisine")
+
+db.restaurants.aggregate([{$group:{_id:"$city",count:{$sum:1}}}])
+
+db.restaurants.aggregate([{$group:{_id:"$cuisine",count:{$sum:1}}}])
+
+db.restaurants.aggregate([{$group:{_id:"$cuisine",avgRating:{$avg:"$rating"}}}])
+
+db.restaurants.aggregate([{$group:{_id:"$city",avgOrderValue:{$avg:"$avg_order_value"}}}])
+
+db.restaurants.aggregate([{$group:{_id:"$cuisine",avgOrderValue:{$avg:"$avg_order_value"}}},{$sort:{avgOrderValue:-1}},{$limit:1}])
+
+db.restaurants.aggregate([{$group:{_id:"$cuisine",count:{$sum:1}}},{$match:{count:{$gt:1}}}])
