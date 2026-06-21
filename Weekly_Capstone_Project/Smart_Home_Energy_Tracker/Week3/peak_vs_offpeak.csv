@@ -1,0 +1,9 @@
+device_id,device_name,period,total_kwh
+1,Air Conditioner,peak,7.5
+2,Refrigerator,off_peak,2.25
+2,Refrigerator,peak,1.05
+3,Washing Machine,peak,1.9
+4,Television,off_peak,0.35
+4,Television,peak,0.55
+5,Water Heater,off_peak,6.6
+5,Water Heater,peak,6.0
