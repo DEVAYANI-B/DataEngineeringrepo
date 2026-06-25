@@ -1,0 +1,16 @@
+device_id,device_name,timestamp,hour,energy_kwh
+1,Air Conditioner,2026-01-01 14:00:00,14,2.5
+1,Air Conditioner,2026-01-01 20:00:00,20,2.3
+1,Air Conditioner,2026-01-02 15:00:00,15,2.7
+2,Refrigerator,2026-01-01 00:00:00,0,1.1
+2,Refrigerator,2026-01-01 12:00:00,12,1.05
+2,Refrigerator,2026-01-02 01:00:00,1,1.15
+3,Washing Machine,2026-01-01 09:00:00,9,0.9
+3,Washing Machine,2026-01-02 10:00:00,10,1.0
+4,Television,2026-01-01 19:00:00,19,0.3
+4,Television,2026-01-02 21:00:00,21,0.25
+4,Television,2026-01-03 22:00:00,22,0.35
+5,Water Heater,2026-01-01 07:00:00,7,3.2
+5,Water Heater,2026-01-02 08:00:00,8,3.1
+5,Water Heater,2026-01-03 07:00:00,7,3.4
+5,Water Heater,2026-01-03 18:00:00,18,2.9

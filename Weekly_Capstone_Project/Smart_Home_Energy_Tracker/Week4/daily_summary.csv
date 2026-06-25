@@ -1,0 +1,13 @@
+device_id,device_name,log_date,daily_kwh
+5,Water Heater,2026-01-02,3.1
+4,Television,2026-01-01,0.3
+1,Air Conditioner,2026-01-02,2.7
+5,Water Heater,2026-01-01,3.2
+1,Air Conditioner,2026-01-01,4.8
+5,Water Heater,2026-01-03,6.3
+3,Washing Machine,2026-01-01,0.9
+4,Television,2026-01-02,0.25
+4,Television,2026-01-03,0.35
+2,Refrigerator,2026-01-01,2.1500000000000004
+2,Refrigerator,2026-01-02,1.15
+3,Washing Machine,2026-01-02,1.0

@@ -1,0 +1,4 @@
+month,user_id,user_name,email,total_spend,monthly_budget,savings,alert_status
+2026-01-01,1,Ravi Teja,ravi.teja@email.com,25380.5,12000.0,-13380.5,Over Budget
+2026-01-01,2,Sneha Reddy,sneha.reddy@email.com,13970.0,10000.0,-3970.0,Over Budget
+2026-01-01,3,Arjun Kumar,arjun.kumar@email.com,13600.0,11000.0,-2600.0,Over Budget
